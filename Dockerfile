@@ -1,4 +1,4 @@
-FROM hayd/alpine-deno:1.7.1
+FROM denoland/deno:alpine-1.17.1
 
 WORKDIR /app
 
@@ -8,3 +8,5 @@ USER deno
 ADD . .
 
 CMD deno run --allow-net --allow-env src/index.ts
+
+EXPOSE 8000

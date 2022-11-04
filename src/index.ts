@@ -1,9 +1,10 @@
-import { Application, send } from "https://deno.land/x/oak@v11.1.0/mod.ts";
-import * as log from "https://deno.land/std/log/mod.ts";
+import { Application } from "https://deno.land/x/oak@v11.1.0/mod.ts";
+import * as log from "https://deno.land/std@0.162.0/log/mod.ts";
 import api from "./api.ts";
+import { config } from "https://deno.land/x/dotenv/mod.ts";
 
 const app = new Application();
-const PORT = parseInt(Deno.env.get("PORT") ?? "8000");
+const PORT = Deno.env.get("PORT") ?? 8000;
 
 log.setup({
   handlers: {
